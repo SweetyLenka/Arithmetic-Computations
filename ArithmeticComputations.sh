@@ -13,6 +13,9 @@ echo "a+b*c :" $Operation1
 Operation2=$(($a*$b+$c))
 echo "a*b+c :" $Operation2
 
-
 Operation3=$(($c+$a/$b))
 echo "c+a/b :" $Operation3
+
+Operation4=$(($a%$b+$c))
+echo "a%b+c :" $Operation4
+
