@@ -29,3 +29,6 @@ ArithmeticOperations[Operation4]=$Operation4
 
 echo  "Dictionary : ${ArithmeticOperations[@]}"
 
+Array=(${ArithmeticOperations[Operation1]} ${ArithmeticOperations[Operation2]} ${ArithmeticOperations[Operation3]}
+${ArithmeticOperations[Operation4]})
+echo "Array : ${Array[@]}"
