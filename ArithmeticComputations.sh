@@ -31,6 +31,7 @@ Array=(${ArithmeticOperations[Operation1]} ${ArithmeticOperations[Operation2]} $
 ${ArithmeticOperations[Operation4]})
 echo "Array : ${Array[@]}"
 
+#(Sorting Descending)
 
 for((i=0;i<4;i++))
 do
@@ -50,4 +51,27 @@ echo "After sorting in descending order"
 for((i=0;i<4;i++))
 do
 	echo ${Array[$i]}
+done
+
+
+#(Sorting Ascending)
+
+for((i=0;i<4;i++))
+do
+   for((j=$i+1;j<4;j++))
+   do
+         if [ ${Array[i]} -gt ${Array[j]} ]
+         then
+            temp=${Array[i]}
+            Array[$i]=${Array[j]}
+            Array[j]=$temp
+         fi
+   done
+done
+
+echo "After sorting in Ascending order"
+
+for((i=0;i<4;i++))
+do
+   echo ${Array[$i]}
 done
