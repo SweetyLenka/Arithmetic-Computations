@@ -1,6 +1,4 @@
-#WELCOME TO ARITHMETIC COMPUTATIONS
-
-#!/bin/bash -x
+#!/bin/bash 
 
 echo "Enter three numbers :"
 read a 
@@ -32,3 +30,24 @@ echo  "Dictionary : ${ArithmeticOperations[@]}"
 Array=(${ArithmeticOperations[Operation1]} ${ArithmeticOperations[Operation2]} ${ArithmeticOperations[Operation3]}
 ${ArithmeticOperations[Operation4]})
 echo "Array : ${Array[@]}"
+
+
+for((i=0;i<4;i++))
+do
+	for((j=$i+1;j<4;j++))
+	do
+			if [ ${Array[i]} -lt ${Array[j]} ]
+			then
+				temp=${Array[i]}
+				Array[$i]=${Array[j]}
+				Array[j]=$temp
+			fi
+	done
+done
+
+echo "After sorting in descending order"
+
+for((i=0;i<4;i++))
+do
+	echo ${Array[$i]}
+done
